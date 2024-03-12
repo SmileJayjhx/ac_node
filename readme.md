@@ -1,12 +1,15 @@
-主程序功能：
-    - 执行serer_cmd；
-    - 反馈serer_encoder；
-    - 零点校正；
-    - 手自动切换
-main.cpp 全向车
-main_duigao_rebot.cpp rebot车型，注意车体需要同时接收到运动控制和叉齿控制才是有效，只运动也需要给叉发0，在叉齿控制以实现。
-main_duigao.cpp 如意车型，转向和行走都是柯蒂斯
-main_floor.cpp 如意车型，转向和行走是两套协议
-main_mima.cpp 如意车型，转向和行走是两套协议
+**Package:** ROS msgs package, `common`, available at https://github.com/SmileJayjhx/common
 
+**Steps to Reproduce:**
 
+1. Download `common` and `ac_node`.
+2. Navigate to the `common` directory, run `bloom-generate rosdebian`, followed by `fakeroot debian/rules binary`.
+3. Navigate to the `ac_node` directory, run `bloom-generate rosdebian`, followed by `fakeroot debian/rules binary`.
+4. Install the packages using `sudo dpkg -i ../*.deb`.
+5. Launch the node with `roslaunch ac_node start_ac_node.launch`.
+6. Publish to the topic using `rostopic pub -r 10 /peripheral_devs_state common/peripheral_uart`.
+7. Observe the main function restarts.
+
+![Screenshot from 2024-03-12 15-07-23](https://gitee.com/smilejay/ubuntu-picture-bed/raw/master/img/20240312150818.png)
+
+I add `[ERROR] [1710227236.688463076]: getting into main` at the beginning of main function.
