@@ -1,0 +1,5 @@
+# 舵轮角度零点
+
+main_servo_zero_point: 0
+left_servo_zero_point: 0
+right_servo_zero_point: 0

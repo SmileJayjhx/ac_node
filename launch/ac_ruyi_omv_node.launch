@@ -1,0 +1,18 @@
+<launch>
+
+    <node name="ac_node" pkg="ac_node"  type="ac_ruyi_omv_node" output="screen">
+        <rosparam file="/opt/robot_data/vehicle_config/vehicle_mechanical_config.yaml" command="load"/>
+        <param name="zero_point_calibration_enable" type="bool" value="true" />
+        <param name="config_file_path" type="string" value="/opt/robot_data/vehicle_config/" />
+        <rosparam file="/opt/robot_data/vehicle_config/ac_config.yaml" command="load"/>
+        <rosparam file="/opt/robot_data/vehicle_config/servo_zero_point.yaml" command="load"/>
+        <!-- <rosparam file="$(find ac_node)/config/ac_config.yaml" command="load"/> -->
+        <!-- <rosparam file="$(find ac_node)/config/servo_zero_point.yaml" command="load"/> -->
+        <!-- <remap from="/servo_encoder" to="/servo_encoder" />   -->
+        <!-- <remap from="/servo_cmd" to="/servo_cmd" />   -->
+        
+        <remap from="/can0_tx" to="/agv_move" />  
+
+    </node>
+
+</launch>

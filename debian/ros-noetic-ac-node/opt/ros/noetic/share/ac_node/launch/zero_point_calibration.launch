@@ -1,0 +1,16 @@
+<launch>
+
+    <node name="ac_node" pkg="ac_node"  type="ac_node" output="log">
+        <param name="zero_point_calibration_enable" type="bool" value="true" />
+        <param name="config_file_path" type="string" value="/home/zc/.ros/vehicle_config/" />
+        <rosparam file="/opt/robot_data/vehicle_config/ac_config.yaml" command="load"/>
+        <rosparam file="/opt/robot_data/vehicle_config/servo_zero_point.yaml" command="load"/>
+        <remap from="/servo_encoder" to="/servo_encoder" />  
+        <remap from="/can_tx" to="/can_dbw_send" />  
+        <remap from="/servo_cmd" to="/servo_cmd" />  
+        <remap from="/can_rx" to="/can_dbw_recv" />  
+        <remap from="/can1_tx" to="/can_charge_send" />  
+        <remap from="/can1_rx" to="/can_charge_recv" />  
+    </node>
+
+</launch>

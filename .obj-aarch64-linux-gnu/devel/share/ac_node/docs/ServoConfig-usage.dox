@@ -1,0 +1,10 @@
+\subsubsection usage Usage
+\verbatim
+<node name="ac_node" pkg="ac_node" type="ac_node">
+  <param name="save_data" type="bool" value="False" />
+  <param name="servo_zero_point" type="double" value="0.0" />
+  <param name="left_servo_zero_point" type="double" value="0.0" />
+  <param name="right_servo_zero_point" type="double" value="-1.6" />
+</node>
+\endverbatim
+

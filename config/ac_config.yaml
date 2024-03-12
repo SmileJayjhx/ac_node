@@ -1,0 +1,17 @@
+left_canopen_id:  6
+right_canopen_id:  8
+fre:  20
+timeout_ms:  200
+
+car_rpm_max:     2400
+near_threshold:  7 #单位 度
+
+servo_can_tx_topic:  "can1_tx"
+curtis_can_tx_topic:  "can0_tx"
+servo_can_rx_topic:  "can1_rx"
+curtis_can_rx_topic:  "can0_rx"
+
+car_type:   3       ##1：如意车型  2：rebot 车型   3：如意+伺服转向
+
+curtis_theta_oppsite: true
+curtis_vel_oppsite: true

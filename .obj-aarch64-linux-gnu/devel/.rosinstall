@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/orangepi/ceshi_ws/src/move/ac_node/.obj-aarch64-linux-gnu/devel/setup.sh

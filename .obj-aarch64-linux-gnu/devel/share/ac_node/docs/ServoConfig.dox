@@ -1,0 +1,9 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~save_data" : \b [bool] save data    min: False, default: False, max: True
+- \b "~servo_zero_point" : \b [double] servo_zero_point  min: -20.0, default: 0.0, max: 20.0
+- \b "~left_servo_zero_point" : \b [double] left_servo_zero_point  min: -24.0, default: 0.0, max: 24.0
+- \b "~right_servo_zero_point" : \b [double] right_servo_zero_point  min: -8.0, default: -1.6, max: 8.0
+

@@ -1,0 +1,13 @@
+Package: ros-noetic-ac-node-dbgsym
+Package-Type: ddeb
+Source: ros-noetic-ac-node
+Version: 0.0.0-0focal
+Auto-Built-Package: debug-symbols
+Architecture: arm64
+Maintainer: zcnest <zcnest@todo.todo>
+Installed-Size: 4761
+Depends: ros-noetic-ac-node (= 0.0.0-0focal)
+Section: debug
+Priority: optional
+Description: debug symbols for ros-noetic-ac-node
+Build-Ids: 286a15eb7ac9e9a76fdb0fae6930df06f14a055b 34066a56adaa28f8c6a56d7304a02cd19ec08822

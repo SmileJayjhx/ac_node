@@ -1,0 +1,9 @@
+Package: ros-noetic-ac-node
+Version: 0.0.0-0focal
+Architecture: arm64
+Maintainer: zcnest <zcnest@todo.todo>
+Installed-Size: 898
+Depends: libc6 (>= 2.17), libgcc-s1 (>= 3.0), libstdc++6 (>= 9), ros-noetic-common, ros-noetic-dynamic-reconfigure, ros-noetic-roscpp, ros-noetic-rospy, ros-noetic-std-msgs
+Section: misc
+Priority: optional
+Description: The ac_node package

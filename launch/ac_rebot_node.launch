@@ -1,0 +1,18 @@
+<launch>
+    <node name="main_duigao_rebot" pkg="ac_node"  type="ac_rebot_node" output="screen">
+        <param name="zero_point_calibration_enable" type="bool" value="true" />
+        <param name="config_file_path" type="string" value="/opt/robot_data/vehicle_config/" />
+        <param name="rebot_can_tx_topic" type="string" value="/can0_tx" />
+        <param name="rebot_can_rx_topic" type="string" value="/can0_rx" />
+        <param name="near_threshold"  value="20" />
+        <!-- 0x270 -->
+        <param name="fre"  type="int"  value="7" />
+        <rosparam file="/opt/robot_data/vehicle_config/ac_config.yaml" command="load"/>
+        <rosparam file="/opt/robot_data/vehicle_config/servo_zero_point.yaml" command="load"/>
+        <remap from="/servo_encoder" to="/servo_encoder" /> 
+        <remap from="/servo_cmd" to="/servo_cmd" />  
+        <remap from="/can0_tx" to="/can0_tx" />  
+        <remap from="/can0_rx" to="/can0_rx" />  
+    </node>
+
+</launch>

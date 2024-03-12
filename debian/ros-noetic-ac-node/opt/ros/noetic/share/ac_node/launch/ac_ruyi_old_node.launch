@@ -1,0 +1,35 @@
+<launch>
+    <arg name="Curtis_Steer_Enable"   default="false"/>
+    <!-- <node name="ac_node_floor" pkg="ac_node"  type="ac_node_floor" output="screen"> -->
+    <node name="ac_node_floor" pkg="ac_node"  type="ac_ruyi_old_node">
+        <param name="zero_point_calibration_enable" type="bool" value="false" />
+        <param name="config_file_path" type="string" value="/opt/robot_data/vehicle_config/" />
+        
+        <param name="Curtis_Steer_Enable"   value="$(arg Curtis_Steer_Enable)" />
+        
+        <param name="servo_can_tx_topic" type="string" value="/can1_tx" />
+        <param name="servo_can_rx_topic" type="string" value="/can1_rx" />
+        <param name="curtis_can_tx_topic" type="string" value="/can0_tx" />
+        <param name="curtis_can_rx_topic" type="string" value="/can0_rx" />
+        <param name="near_threshold"  value="90" />
+        <!-- 0x270 -->
+        <!-- <param name="servo_driver_steering_id"  value="624" /> -->
+        <param name="servo_driver_steering_id"  type="int"  value="624" />
+        <param name="fre"  type="int"  value="20" />
+
+
+        <rosparam file="/opt/robot_data/vehicle_config/ac_config.yaml" command="load"/>
+        <rosparam file="/opt/robot_data/vehicle_config/servo_zero_point.yaml" command="load"/>
+
+        <remap from="/servo_encoder" to="/servo_encoder" /> 
+        <remap from="/servo_cmd" to="/servo_cmd" />  
+
+        <remap from="/can0_tx" to="/agv_move" />  
+        <remap from="/can0_rx" to="/can0_rx" />  
+
+        <!-- <remap from="/can_tx" to="/can0_tx" />  
+        <remap from="/can_rx" to="/can0_rx" />   -->
+
+    </node>
+
+</launch>
